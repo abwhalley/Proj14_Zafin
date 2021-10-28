@@ -1,0 +1,69 @@
+{
+  "manifest_version": 2,
+  "name": "Points chrome extension",
+  "author": "Duncan McRae",
+  "version": "2.0",
+  "description": "Points extension",
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "browser_action": {
+    "default_popup":"pages/popup.html",
+    "default_title": "Points",
+    "default_icon":"icons/P.png"
+  },
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "background",
+    "bookmarks",
+    "browsingData",
+    "clipboardRead",
+    "clipboardWrite",
+    "contentSettings",
+    "contextMenus",
+    "cookies",
+    "debugger",
+    "declarativeContent",
+    "desktopCapture",
+    "downloads",
+    "fontSettings",
+    "gcm",
+    "geolocation",
+    "history",
+    "idle",
+    "management",
+    "nativeMessaging",
+    "notifications",
+    "pageCapture",
+    "power",
+    "printerProvider",
+    "privacy",
+    "proxy",
+    "sessions",
+    "storage",
+    "system.cpu",
+    "system.display",
+    "system.memory",
+    "system.storage",
+    "tabCapture",
+    "tabs",
+    "topSites",
+    "tts",
+    "ttsEngine",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["js/popup.js"],
+    "css": ["css/style.css"]
+  }],
+  "web_accessible_resources": [
+    "*.js",
+    "*.css"
+  ]
+}
