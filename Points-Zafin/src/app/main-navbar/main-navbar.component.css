@@ -1,0 +1,5 @@
+.nav { margin-bottom: 0; }
+.dropdown { position: static; }
+.dropdown-menu { width: 75%; text-align: left; }
+.dropdown-menu>li { display: inline-block; }
+.dropdown-item { height: 175px; padding: 85px; text-align: center; }
