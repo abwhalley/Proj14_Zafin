@@ -5,12 +5,12 @@
  * --------------------------------------------------------------------------
  */
 
-import Data from './dom/data'
+import Data from '.cache/bootstrap/js/src/dom/data'
 import {
   executeAfterTransition,
   getElement
-} from './util/index'
-import EventHandler from './dom/event-handler'
+} from '.cache/bootstrap/js/src/util'
+import EventHandler from '.cache/bootstrap/js/src/dom/event-handler'
 
 /**
  * ------------------------------------------------------------------------
