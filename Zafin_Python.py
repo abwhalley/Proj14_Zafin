@@ -13,13 +13,17 @@ import smtplib, ssl
 
 port = 587  # For SSL
 smtp_server = "smtp.gmail.com"
-receiver_email = "abwhalley@gmail.com"  # Enter your address
+receiver_email = "abwhalley@gmail.com"  # user email address
 sender_email = "jdoe65629@gmail.com"  # Enter receiver address
 password = "Titans11"
 message = """\
-Subject: Hi there
+Subject: Your Zafin Promo Code
 
-This message is sent from Python."""
+Hello Adam,
+
+The following code is redeemable for x many points!
+
+XGA76GS98"""
 
 context = ssl.create_default_context()
 
