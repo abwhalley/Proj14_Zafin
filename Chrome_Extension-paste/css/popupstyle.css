@@ -1,0 +1,59 @@
+/*popup*/
+.popup_main{
+    width: 300px;
+    padding: 20px;
+    background:rgb(57, 196, 196);
+    text-align: center;
+    border-style: double;
+    border-width: 10px;
+    border-color:rgba(0, 0, 0, 0.555);
+  }
+  .Title{
+    margin-top: 20px;
+    justify-self: center;
+    font-size: 18pt;
+  }
+  
+  .dollars{
+    margin-top: 25px;
+    justify-self: center;
+    font-size: 16pt;
+  }
+  
+  .promo{
+    font-size: 16pt;
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .code{
+    margin-top: 40vh;
+    font-size: 15pt;
+  }
+  
+  .input{
+    text-align: center;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18pt;
+    height: 35px;
+    width: auto;
+    outline: black;
+    background-color: white;
+  }
+  
+  .btn{
+    margin-top: 20px;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12pt;
+  padding: 6px 9px;
+  color: white;
+  background-color: black;
+  }
+  .btn:hover{
+    
+  color: white;
+  background-color: grey;
+  }
+  
