@@ -18,22 +18,36 @@ import smtplib, ssl
 
 import random
 import string
+characters = string.ascii_letters + string.digits    
+promoCode = ''.join(random.choice(characters) for i in range(10))
 
+<<<<<<< HEAD
 characters = string.ascii_letters + string.digits
 
 def get_random_string(length):
     promoCode = ''.join(random.choice(characters) for i in range(length))
     return "Thanks for using Zafin Points! Your promo code is " + promoCode + ", which can be used at any participating business."
+=======
+>>>>>>> a2b35d96d29c7112027cdc1e9d39e3e6da9b9ebf
 
 port = 587  # For SSL
 smtp_server = "smtp.gmail.com"
 receiver_email = "abwhalley@gmail.com"  # Enter your address
 sender_email = "jdoe65629@gmail.com"  # Enter receiver address
 password = "Titans11"
+<<<<<<< HEAD
 message1 = get_random_string(10) + "\nThis promo code is worth $5."
 message2 = get_random_string(10) + "\nThis promo code is worth $10."
 message3 = get_random_string(10) + "\nThis promo code is worth $20."
 message4 = get_random_string(10) + "\nThis promo code is worth $50."
+=======
+message = """\
+Subject: Zafin points redemption
+
+Thanks for using Zafin Points! Your promo code is {promoCode}, which can be used at any participating business."""
+
+#Send email here
+>>>>>>> a2b35d96d29c7112027cdc1e9d39e3e6da9b9ebf
 
 context = ssl.create_default_context()
 

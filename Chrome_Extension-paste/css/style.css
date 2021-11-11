@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 .navbar{
-  background:#141414;
+  background:rgb(60, 185, 216);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -15,7 +15,6 @@
   top: 0;
   z-index: 999;
 }
-
 .navbar_container{
   display: flex;
   justify-content: space-between;
@@ -78,12 +77,12 @@
   border: none;
   outline: none;
   border-radius: 4px;
-  background: #3d1c97;
+  background: #2361a8;
   
 }
 
 .navbar_links:hover{
-  color: #9518fc;
+  color: #2361a8;
   transition: all 0.3s ease
 }
 
@@ -109,7 +108,7 @@
     z-index: -1;
   }
   .navbar_menu.active{
-    background: #141414;
+    background: rgb(54, 163, 190);
     top: 100%;
     opacity: 1;
     transition: all 0.5s ease;
@@ -180,96 +179,75 @@
 }
 
 /* Main section*/
-.main{
-  background-color: #141414;
-}
 .main_container{
 display: flex;
-align-items: center;
-justify-content: center;
 margin: 0 auto;
 height: 90vh;
-background-color: #141414;
 z-index: 1;
 width: 100%;
-max-width: 1600px;
 padding: 0 50px;
 }
 
-
-.main_content h4 {
-  font-size: 3rem;
-  color:lightblue;
-  background-color: #141414;
+h1 {
+  margin-top: 5px;
+  font-size: 4rem;
+  color:rgb(8, 8, 10);
   background-size: 100%;
   text-align: center;
 }
 
-.main_content h1 {
+h2 {
   margin-top: 5px;
-  font-size: 4rem;
-  color:lightblue;
-  background-color: #141414;
+  font-size: 2.5rem;
+  color:rgb(0, 89, 255);
+  background-size: 100%;
+  text-align: center;
+}
+
+
+h4 {
+  font-size: 3rem;
+  color:rgba(7, 7, 15, 0.753);
   background-size: 100%;
   text-align: center;
 }
 
 .box{
+  width: auto;
   margin-top: 20px;
-  font-size: 3rem;
-  color:lightblue;
-  background-color: #141414;
-  background-size: 100%;
+  font-size: 1.5rem;
+  color: #141414;
+  text-align: left;
+  align-items: center;
   text-align: center;
-  color: #fff;
+}
+
+.box2{
+  width: auto;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  color: #141414;
+  text-align: left;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.box3{
+  width: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #141414;
+  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
 .Output{
-  
   text-align: center;
-  margin: 0 auto;
-  border-radius: 5px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 18pt;
-  height: 35px;
-  width: auto;
-  outline: black;
-  background-color: white;
-}
-
-/*popup*/
-.popup_main{
-  width: 300px;
-  height: 300px;
-  padding: 20px;
-  background:rgb(57, 196, 196);
-  text-align: center;
-}
-.Title{
-  margin-top: 20px;
-  justify-self: center;
-  font-size: 18pt;
-}
-
-.dollars{
-  margin-top: 25px;
-  justify-self: center;
-  font-size: 16pt;
-}
-
-.promo{
-  font-size: 16pt;
-  margin-top: 25px;
-  margin-bottom: 20px;
-}
-
-.code{
-  margin-top: 40vh;
-  font-size: 15pt;
-}
-
-.input{
-  text-align: center;
+  margin-left: 27%;
   border-radius: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 18pt;
@@ -281,16 +259,61 @@ padding: 0 50px;
 
 
 .btn{
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20pt;
+  padding: 20px;
+  height: auto;
+  width: auto;
+  outline: black;
+  background-color: rgb(0, 89, 255);
+
+}
+
+.btn:hover{
+  outline: black;
+  background-color: rgb(39, 109, 167);
+  cursor: pointer;
+}
+
+.chrome_demo{
+  background-color:rgb(60, 185, 216);
+  margin-left: 100px;
+  margin-top: 100px;
+  align-items: center;
+  padding: 20px;
+  float: left;
+  width: 620px;
+  height: 120%;
+  border-radius: 20px;
+}
+.body{
+  background-color: rgb(165, 214, 230);
+}
+
+.buisness_box{
+  background-color:rgb(60, 185, 216);
+  margin-top: 35%;
+  margin-left: 30%;
+  margin-bottom: 5%;
+  padding: 20px;
+  width: 620px;
+  height: 120%;
+  border-radius: 20px;
+}
+
+.Input{
+  margin-left: 27%;
   border-radius: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 12pt;
-  margin-top: 5px;
-padding: 6px 9px;
-color: white;
-background-color: black;
+  font-size: 18pt;
+  height: 35px;
+  width: auto;
+  outline: black;
+  background-color: white;
 }
-.btn:hover{
-  
-color: white;
-background-color: grey;
-}
+

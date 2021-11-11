@@ -6,7 +6,7 @@
 	<Title>Points Extention</Title>
 	<link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class = "body">
 	<!--navbar section-->
 	<nav class="navbar">
 		<div class="navbar_container">
@@ -30,21 +30,43 @@
 					<a href="#exchange" class="navbar_links" id="exchange-page">Exchange</a>
 				</li>
 				<li class="navbar_btn">
-					<a href="#sign-in" class="button" id="signin">Sign-In</a>
+					<a href="#sign-in" class="button" id="signin">Sign-in</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 	<!--Main page-->
-	<div class="main"></div>
-	<div class="main_container">
-		
-	<div class="main_content">
-		<H4>Checkout</H4>
-<div class="box">Promo code</div>
-	<input class="Output" id="Output" type='text' value="">
-	</div>
-	</div>
+	<main class="main">
+		<div class="main_content">
+			<div class = "chrome_demo">
+				<H4>Chrome Extension demo</H4>
+			<p class="box">The box below will demonstrate
+			how the chrome extension will automatically
+			fill your promo code box at checkout. Just
+			click the "P" in your chrome extensions and
+			hit "paste code" to watch the code appear
+			in the promo box!
+			</p>
+			<h2 class = promo>Promo code:</h2>
+			<input class="Output" id="Output" type='text' value="">
+		</div>
+		<div class="main_content">
+			<div class = "chrome_demo">
+				<H4>Download the app!</H4>
+			<p class="box2">Your points system wouldn't be complete without the app!
+				Click here to download the app and manage your points on the go!</p>
+			<button class = "btn">Download</button>
+		</div>
+	</main>
+		<div class = "buisness_box">
+				<H4>Are you a business looking to sign up?</H4>
+			<p class="box3">Just type in your business name and address to get started!</p>
+			<h2 class = promo>Buisness name:</h2>
+			<input class="Input" id="Buisness_Input" type='text' value="">
+			<h2 class = promo>Address:</h2>
+			<input class="Input" id="Buisness_Input" type='text' value="">
+			<button class = "btn">Get started</button>
+		</div>
 	<script src="../js/Webinterface.js"></script>
 </body>
 </html>
