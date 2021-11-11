@@ -1,6 +1,11 @@
 from kivy.lang import Builder
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, ObjectProperty, NumericProperty
 from kivy.config import Config
+from kivy.lang import Builder
+from kivymd.app import MDApp
+from kivymd.uix.screen import Screen
+from kivy.uix.textinput import TextInput
+from Server import companies, widgets
 Config.set('graphics', 'width', '800')
 Config.set('graphics', 'height', '900')
 Config.set('graphics', 'resizable', False)
@@ -11,100 +16,26 @@ from kivymd.uix.card import MDCard
 
 import smtplib, ssl
 
+import random
+import string
+
+characters = string.ascii_letters + string.digits
+
+def get_random_string(length):
+    promoCode = ''.join(random.choice(characters) for i in range(length))
+    return "Thanks for using Zafin Points! Your promo code is " + promoCode + ", which can be used at any participating business."
+
 port = 587  # For SSL
 smtp_server = "smtp.gmail.com"
-receiver_email = "abwhalley@gmail.com"  # user email address
+receiver_email = "abwhalley@gmail.com"  # Enter your address
 sender_email = "jdoe65629@gmail.com"  # Enter receiver address
 password = "Titans11"
-message = """\
-Subject: Your Zafin Promo Code
-
-Hello Adam,
-
-The following code is redeemable for x many points!
-
-XGA76GS98"""
+message1 = get_random_string(10) + "\nThis promo code is worth $5."
+message2 = get_random_string(10) + "\nThis promo code is worth $10."
+message3 = get_random_string(10) + "\nThis promo code is worth $20."
+message4 = get_random_string(10) + "\nThis promo code is worth $50."
 
 context = ssl.create_default_context()
-
-
-KV = '''
-
-<CompanyCard>:
-    size_hint_y: None
-    valign: "center"
-
-    MDBoxLayout:
-        orientation: "horizontal"
-        padding: 25
-
-        MDLabel:
-            text: root.text1       
-            font_style: "H6"
-
-        MDLabel:
-            text: root.text2
-            halign: "right"
-
-        MDLabel:
-            text: root.text3
-            halign: "right"
-
-ScreenManager:
-
-    Screen:
-        MDBoxLayout:
-            orientation: "vertical"
-            spacing: 20
-
-            MDBoxLayout:
-                orientation: "vertical"
-                adaptive_height: True
-                spacing: 50
-                padding: 0
-
-                MDToolbar:
-                    title: "Zafin Points"
-                    elevation: 10
-                    left_action_items: [["menu", lambda x: app.menu()]]
-
-                MDLabel:
-                    text: "Your Points"
-                    halign: "center"
-                    font_style: "H2"
-
-                MDList:
-                    id: md_list
-                    spacing: "10dp"
-                    padding: 10
-
-                
-                MDLabel:
-                    text: "Your total available points: $35"
-                    halign: "center"
-                    font_style: "H6"
-
-            MDBoxLayout:
-                orientation: "horizontal"
-                spacing: "25dp"
-                padding: 25
-                adaptive_height: True
-
-                MDLabel:
-                    text: "How many points do you wish to redeem"
-                    halign: "center"
-                    width:20
-
-                MDTextField:
-                    hint_text: "Value"
-                    mode: "rectangle"
-                    width: "10dp"
-                    id: "RedeemValue"
-
-                MDRaisedButton:
-                    text: "Redeem"
-                    on_press: app.redeem()
-'''
 
 
 
@@ -115,13 +46,16 @@ class CompanyCard(MDCard):
     text2 = StringProperty()
     text3 = StringProperty()
 
+
 class ZafinPoints(MDApp):
     def __init__(self, **kwargs):
+        self.redeemValue = 0
+        self.points=35
         super().__init__(**kwargs)
-        self.screen = Builder.load_string(KV)
 
     def build(self):
-        print(self.root)
+        self.screen = Builder.load_string(companies)
+        self.screen = Builder.load_string(widgets)
         return self.screen
 
     def on_start(self):
@@ -131,17 +65,49 @@ class ZafinPoints(MDApp):
             self.screen.ids.md_list.add_widget(
                 CompanyCard(text1=f"Company {i}", text2=f"Points: {i}",text3=f"Converted value: {i+5}")
             )
-
+        
     def menu(self):
         pass
 
-    def redeem(self):
+    def redeem5(self):
+        self.screen.ids.total_points.text = "Your total available points: $" + str(self.points-5)
+        self.points = self.points -5
         with smtplib.SMTP(smtp_server, port) as server:
             server.ehlo()  # Can be omitted
             server.starttls(context=context)
             server.ehlo()  # Can be omitted
             server.login(sender_email, password)
-            server.sendmail(sender_email, receiver_email, message)
+            server.sendmail(sender_email, receiver_email, message1)
+            
+    def redeem10(self):
+        self.screen.ids.total_points.text = "Your total available points: $" + str(self.points-10)
+        self.points = self.points -10
+        with smtplib.SMTP(smtp_server, port) as server:
+            server.ehlo()  # Can be omitted
+            server.starttls(context=context)
+            server.ehlo()  # Can be omitted
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message2)
+            
+    def redeem20(self):
+        self.screen.ids.total_points.text = "Your total available points: $" + str(self.points-20)
+        self.points = self.points -20
+        with smtplib.SMTP(smtp_server, port) as server:
+            server.ehlo()  # Can be omitted
+            server.starttls(context=context)
+            server.ehlo()  # Can be omitted
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message3)
+            
+    def redeem50(self):
+        self.screen.ids.total_points.text = "Your total available points: $" + str(self.points-50)
+        self.points = self.points -50
+        with smtplib.SMTP(smtp_server, port) as server:
+            server.ehlo()  # Can be omitted
+            server.starttls(context=context)
+            server.ehlo()  # Can be omitted
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, message4)  
 
 
 
